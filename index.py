@@ -11,6 +11,5 @@ def moisture(c1, c2):
     lat1, lon1 = map(float, c1)
     lat2, lon2 = map(float, c2)
     cur.execute('SELECT * FROM moisture WHERE lat BETWEEN %s AND %s AND lon BETWEEN %s AND %s', [min(lat1,lat2),max(lat1,lat2),min(lon1,lon2),max(lon1,lon2)])
-    dump = cur.fetchall()
-    print(dump)
-    return {'dump': dump}
+    moisture = cur.fetchall()
+    return {'moisture': moisture}
