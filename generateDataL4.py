@@ -40,7 +40,7 @@ moisture = np.array(f[u'Geophysical_Data']
                     [u'sm_rootzone']).tolist()
 # Landcover
 vegetation = np.array(f[u'Geophysical_Data']
-                    [u'vegetation_greenness_fraction']).tolist()
+                      [u'vegetation_greenness_fraction']).tolist()
 f.close()
 for i in sys.argv:
     if i == 'm':
@@ -55,10 +55,11 @@ for i in sys.argv:
             for latlon in curRow:
                 allLat += latlon[0]
                 allLon += latlon[1]
-            allLat = allLat/len(curRow)
-            allLon = allLon/len(curRow)
+            allLat = allLat / len(curRow)
+            allLon = allLon / len(curRow)
             if not row.record[2] == '-':
-                cur.execute('INSERT INTO loose_soil (lat, lng, val) VALUES (%s, %s, %s)', [allLat,allLon,row.record[2]])
+                cur.execute('INSERT INTO loose_soil (lat, lng, val) VALUES (%s, %s, %s)', [
+                            allLat, allLon, row.record[2]])
 
 cur.close()
 conn.close()

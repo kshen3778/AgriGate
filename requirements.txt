@@ -1,0 +1,4 @@
+h5py
+hug
+numpy
+pyshp
