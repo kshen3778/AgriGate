@@ -16,7 +16,7 @@ def updatedb(dataType, data, latitude, longitude):
         if i % 100 == 0:
             print(i, '/', length, (i / length) * 100, '%')
         dataList = []
-        // HACK
+        # HACK
         for lat, lng, dat in zip(latitude[i], longitude[i], data[i]):
             if not dat == -9999.0:
                 dataList.append(cur.mogrify(
