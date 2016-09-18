@@ -16,6 +16,7 @@ def updatedb(dataType, data, latitude, longitude):
         if i % 100 == 0:
             print(i, '/', length, (i / length) * 100, '%')
         dataList = []
+        // HACK
         for lat, lng, dat in zip(latitude[i], longitude[i], data[i]):
             if not dat == -9999.0:
                 dataList.append(cur.mogrify(
@@ -53,8 +54,8 @@ for i in sys.argv:
             allLon = 0
             curRow = row.shape.points
             for latlon in curRow:
-                allLat += latlon[0]
-                allLon += latlon[1]
+                allLat += latlon[1]
+                allLon += latlon[0]
             allLat = allLat / len(curRow)
             allLon = allLon / len(curRow)
             if not row.record[2] == '-':
