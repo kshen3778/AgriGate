@@ -1,3 +1,4 @@
 h5py
 pyshp
 hug
+psycopg2
